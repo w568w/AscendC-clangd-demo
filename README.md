@@ -10,6 +10,7 @@
 
 - 由于我目前仅在非昇腾设备上开发，所以没有测试过在昇腾设备上是否能正常工作，并且 `my_build.sh` 只支持编译为 `sim` 模拟器目标（`sim/npu/cpu`）。
 - `stub.h` 仅针对不让目前最小实现的 `AddOp` 算子报错而填充，并不完整，可能会导致其他算子报错。需要根据实际需要对其进行修改。
+- `my_build.sh` 不包含运行算子的过程，请自行参考 `run.sh.bak` 最后几行来运行。总之就是设好 `LD_LIBRARY_PATH` 然后 `msprof op simulator --application=...` 即可。
 
 ## 使用流程
 
