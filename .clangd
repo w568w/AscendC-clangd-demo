@@ -1,0 +1,12 @@
+CompileFlags:
+  Add:
+    - -D__CLANGD__ # enable LSP-time preprocessor macros
+    - -xcuda # enable CUDA's triple angle brackets (<<<>>>) support
+    - -nocudainc # no, we don't use CUDA in fact
+    - -nocudalib # no, we don't use CUDA in fact
+  Remove: 
+    - --cce-* # remove all Ascend compiler flags as clangd does not support them
+    - -o* # suppress output file generation because clangd complains about too many -o options (why?)
+Diagnostics:
+  Suppress:
+    - kern_call_not_global_function # suppress warnings about CUDA kernel calls not being global functions
