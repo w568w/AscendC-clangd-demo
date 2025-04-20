@@ -1,3 +1,4 @@
 out/
 sim_log/
 build/
+.cache/
