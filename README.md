@@ -13,8 +13,9 @@
 5. 正常按照[官方介绍](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/81RC1alpha002/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0006.html)，创建一个新工程；
 6. 将本项目中的文件添加到你创建的工程中，添加位置和说明见下；
 7. 打开 `stub.h`，将其中的绝对路径替换为你的本地路径，例如 `/home/zhangsan/Ascend/ascend-toolkit/latest/...`；
-8. 执行 `gencompile_commands.sh` 脚本，编译项目；
-9. 打开 `op_kernel/{算子名}_custom.cpp` 文件，在最前面导入 `stub.h`，例如 `#include "stub.h"`。检查代码提示是否正常工作。
+8. 打开 `gencompile_commands.sh` 脚本，将 `TILING_HEADER`修改为你的算子的tiling头文件；
+9. 执行 `gencompile_commands.sh` 脚本，编译项目；
+10. 打开 `op_kernel/{算子名}_custom.cpp` 文件，在最前面导入 `stub.h`，例如 `#include "stub.h"`。检查代码提示是否正常工作。
 
 ## 项目结构
 
