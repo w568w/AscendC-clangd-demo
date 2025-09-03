@@ -1,4 +1,4 @@
-# Ascend C++ 工程模板 + Clangd 
+# Ascend C++ 工程模板 + Clangd
 
 这是一个尝试让 Ascend C++ 在 VSCode 中使用 Clangd 的示例工程。
 
@@ -15,7 +15,7 @@
 7. 打开 `stub.h`，将其中的绝对路径替换为你的本地路径，例如 `/home/zhangsan/Ascend/ascend-toolkit/latest/...`；
 8. 打开 `gencompile_commands.sh` 脚本，将 `TILING_HEADER`修改为你的算子的tiling头文件；
 9. 执行 `gencompile_commands.sh` 脚本，编译项目；
-10. 打开 `op_kernel/{算子名}_custom.cpp` 文件，在最前面导入 `stub.h`，例如 `#include "stub.h"`。检查代码提示是否正常工作。
+10. 打开 `op_kernel/{算子名}_custom.cpp` 文件，在最前面导入 `stub.h`，例如 `#include "../stub.h"`。检查代码提示是否正常工作。
 
 ## 项目结构
 
