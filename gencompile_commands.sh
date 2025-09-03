@@ -12,11 +12,7 @@ jq --compact-output 'select(any(.started.execution.arguments[]; endswith(".cpp")
 
 jq --slurp '.[0] + .[1]' compile_commands_1.json compile_commands_2.json > compile_commands.json
 
-rm compile_commands_1.json compile_commands_2.json events.json kernel_events.json
-
-if [ -f "./op_kernel/stub_tiling.h" ]; then
-    rm "./op_kernel/stub_tiling.h"
-fi
+rm compile_commands_1.json compile_commands_2.json events.json kernel_events.json ./op_kernel/stub_tiling.h
 
 python ./cmake/util/tiling_data_def_build.py ${TILING_HEADER} ./op_kernel/stub_tiling.h
 
